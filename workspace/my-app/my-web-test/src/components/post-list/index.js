@@ -12,20 +12,18 @@ function PostList(props) {
         <div className="row">
             {
                 postList.map(post => (
-                    <div class="row">
-                        <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail">
-                                <img
-                                    src="https://www.instagram.com/p/C76iK7vpAV5/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-                                    alt="Description"
-                                    style={{ height: '200px', width: '100%', display: 'block' }}
-                                    data-holder-rendered="true"
-                                />
-                                <div class="caption">
-                                    <h3>{post.title}</h3>
-                                    <p>{post.content}</p>
-                                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-                                </div>
+                    <div className="col-sm-6 col-md-4" key={post.id}>
+                        <div className="thumbnail">
+                            <img
+                                src="https://raw.githubusercontent.com/Skyrim-line/ins_project/main/images/7-11.jpg"
+                                alt="7-11 convenience store"
+                                style={{ height: '200px', width: '100%', display: 'block' }}
+                                data-holder-rendered="true"
+                            />
+                            <div className="caption">
+                                <h3>{post.title}</h3>
+                                <p>{post.content}</p>
+                                <p><a href="#" className="btn btn-primary" role="button">Button</a> <a href="#" className="btn btn-default" role="button">Button</a></p>
                             </div>
                         </div>
                     </div>
