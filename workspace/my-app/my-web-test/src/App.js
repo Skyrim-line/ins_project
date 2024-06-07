@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+import React from 'react';
+import PostList from './components/post-list';
+import HotPost from './components/hot-post';
+import Navbar from './components/Nav-bar';
 import './App.scss';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar></Navbar>
+      <div className="container-fluid">
+        <div className="main-area">
+          {/* row-column 这个行列布局工具样式，是 Bootstrap 里面使用频率最高的工具样式 */}
+          <div className="row">
+            <div className="col-md-9">
+              <PostList page={1}></PostList>
+            </div>
+            <div className="col-md-3">
+              <HotPost></HotPost>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
 
