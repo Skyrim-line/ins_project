@@ -1,3 +1,12 @@
+//复习 SCSS 课程内容，使用 ~ 代表 node_modules，导入 bootstrap 的 scss 文件
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '~bootstrap/dist/css/bootstrap-theme.css';
+
+
+
+
+
+//下面是本项目自身的样式
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
