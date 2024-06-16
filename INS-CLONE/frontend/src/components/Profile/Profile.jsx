@@ -1,9 +1,14 @@
-// import { Container } from "./Profile.styles";
+import { Container } from "./Profile.styles";
+import ProfileInfo from "./ProfileInfo";
+import ProfilePosts from "./ProfilePosts";
 
 const Profile = () => {
-    return (
-        <div>Profile</div>
-    );
+  return (
+    <Container>
+      <ProfileInfo />
+      <ProfilePosts />
+    </Container>
+  );
 };
 
 export default Profile;
