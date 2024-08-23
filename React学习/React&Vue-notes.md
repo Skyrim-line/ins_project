@@ -25,3 +25,6 @@
 `$ npx create-vite@latest frontend --template react`
 
 Vite 也是用来搭建前端的框架的
+
+# Vite Notes
+

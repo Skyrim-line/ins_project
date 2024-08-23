@@ -463,3 +463,219 @@ document.getElementById("demo").innerHTML = $$$ + $myMoney;
 
 # Node.js Notes
 
+**ES module（ESM）和 CommonJS module** 
+
+这是两种 JavaScript 模块化的标准和实现方式，它们有一些显著的区别和特点：
+
+## ES module (ESM)
+
+1. **语法**：
+
+   - 使用 `import` 和 `export` 关键字来导入和导出模块。
+   - 导入：`import { something } from 'module'`
+   - 导出：`export { something }`
+
+2. **异步加载**：
+
+   - 支持异步加载模块，可以动态地导入模块。
+
+   - 示例：
+
+     ```javascript
+     import('./module.js').then(module => {
+       // 使用 module
+     }).catch(error => {
+       // 处理错误
+     });
+     ```
+
+3. **静态解析**：
+
+   - 模块的依赖关系在编译时静态解析，有利于工具进行静态分析和优化。
+
+4. **作用域**：
+
+   - 模块的作用域是静态的，模块内部的变量不会暴露到全局作用域。
+
+5. **浏览器兼容性**：
+
+   - 现代浏览器和 Node.js 12+ 支持 ES module。
+
+6. **默认导出**：
+
+   - 支持默认导出和命名导出。
+
+## CommonJS module (CJS)
+
+### require()
+
+1. **语法**：
+   - 使用 `require()` 函数来引入模块。
+   - 导入：`const something = require('module')`
+   - 导出：`module.exports = something`
+
+2. **同步加载**：
+   - 采用同步加载模块的方式，不支持动态导入。
+
+3. **动态模块路径**：
+   - 可以使用动态计算的模块路径，例如 `require('./' + fileName)`。
+
+4. **作用域**：
+   - 模块的作用域是运行时动态确定的，模块内部变量可能会污染全局作用域。
+
+5. **浏览器兼容性**：
+   - 浏览器不原生支持 CommonJS 模块，需要使用打包工具（如 Browserify 或 webpack）进行转换。
+
+6. **默认导出**：
+   - 只支持默认导出，不支持命名导出。
+
+**主要区别总结：**
+
+- **语法和导入方式**：ES module 使用 `import/export`，CommonJS 使用 `require/module.exports`。
+- **加载方式**：ES module 支持异步加载和静态解析，CommonJS 是同步加载和动态解析。
+- **作用域**：ES module 的作用域是静态的，不会污染全局作用域；CommonJS 的作用域是运行时动态确定的，可能会影响全局作用域。
+- **浏览器兼容性**：ES module 直接在现代浏览器中支持，CommonJS 需要通过工具转换才能在浏览器中使用。
+
+在 Node.js 中，默认的模块系统是 CommonJS，但是 Node.js 也支持 ES module，可以通过文件扩展名 `.mjs` 或者在 `package.json` 中指定 `"type": "module"` 来启用 ES module。
+
+## charAt(xxx)
+
+在你提供的代码中，`.charAt()` 是一个 JavaScript 字符串方法，用于获取字符串中指定位置的字符。
+
+**解释代码：**
+
+```javascript
+const lines = content.split('\n'); // 使用换行符分割文本内容，得到一个行数组
+console.log('Lines:', lines); // 打印分割后的行数组
+const initials = lines.map(line => {
+    const words = line.split(' '); // 使用空格分割每一行，得到一个单词数组
+    const firstLetters = words.map(word => word.charAt(0)); // 获取每个单词的第一个字母组成的数组
+    return firstLetters.join(''); // 将数组中的字母连接成一个字符串
+});
+```
+
+## `.charAt()` 
+
+- `.charAt()` 方法用于获取字符串中指定位置（索引）的字符。
+- 索引从 0 开始，即字符串的第一个字符索引为 0，第二个为 1，依此类推。
+- 如果指定的索引超出了字符串的长度，则返回一个空字符串 `''`。
+- 例如，`word.charAt(0)` 就是获取字符串 `word` 的第一个字符。
+
+**示例：**
+
+假设有一个字符串：
+
+```javascript
+const word = "Hello";
+const firstLetter = word.charAt(0); // 获取第一个字符
+console.log(firstLetter); // 输出 "H"
+```
+
+在你的代码中，`word.charAt(0)` 被用来获取每个单词 `word` 的第一个字母，然后将这些字母组成一个新的字符串，最终构成了 `initials` 数组中的每个元素。
+
+## node -v
+
+用于查看已装版本号
+
+## Express
+
+### 初始化项目要做的步骤
+
+```js
+//npm init
+//npm i express
+//npm i nodemon -D
+```
+
+
+
+### 响应同一个url不同内容
+
+```js
+server.on("request", (req, res) => {
+    console.log("someone is visiting the server");
+    const url = req.url;
+    const method = req.method;
+    const str = `url is ${url} and request method is ${method}`;
+    res.end(str);
+});
+```
+
+### 响应不同url不同内容
+
+```js
+server.on("request", (req, res) => {
+    const url = req.url;
+    let content = '<h1>404 not found</h1>';
+    if (url === "/" || url === "/home") {
+        content = "<h1>Welcome to the home page</h1>";
+    } else if (url === "/about") {
+        content = "<h1>Welcome to the about page</h1>";
+    }
+    res.setHeader("Content-Type", "text/html;charset=utf-8");
+    res.end(content);
+});
+```
+
+### 控制不同文件路径的访问
+
+```js
+app.use(express.static(publicPath)); //会自动找到public文件夹下的index.html文件然后返回给浏览器
+//自定义url尝试
+//http://localhost:8080/static-files/index.html
+app.use('/static-files', express.static(publicPath, { index: false }));//如果没加html则不会访问
+//http://localhost:8080/images/
+app.use('/images', express.static(publicPath));
+```
+
+### nodemon
+
+使用这个模块可以实时更新代码不用每次手动关闭调整
+
+### express.static()
+
+可以创建一个静态资源服务器
+
+### login登陆判断
+
+```js
+// 下面是一个简单的后端login查询示例
+const user = { name: "John", ps: "12345" };
+app.post("/login", (req, res) => {
+    const { name, ps } = req.body;
+    if (name === user.name && ps === user.ps) {
+        res.status(200).json({
+            msg: `${name} Login success`,
+        });
+    } else {
+        res.status(400).json({
+            msg: 'Username or password is wrong',
+        });
+    }
+});
+```
+
+
+
+## API
+
+**例子：天气应用**
+
+你可能经常使用手机上的天气应用来查看今天或未来几天的天气情况。这个过程背后其实是依赖API来获取数据的。
+
+**具体流程：**
+
+1. **用户请求**：你打开天气应用，选择查看你所在城市的天气信息。
+
+2. **API请求**：天气应用程序不会自己去收集天气数据，而是会向一个专门的天气服务（比如WeatherAPI或OpenWeatherMap）发出一个API请求。这个请求包括了你所在城市的信息。
+
+3. **服务处理**：天气服务接收到API请求后，会在他们的数据库中查找相关城市的天气数据。
+
+4. **API响应**：一旦找到数据，天气服务会通过API把天气信息发送回你的应用。这些信息可能包括温度、湿度、风速、降雨量等。
+
+5. **显示结果**：你的天气应用收到这些数据后，会把它们显示在界面上，供你查看。
+
+**总结**：在这个例子中，API就像是你和天气服务之间的桥梁。它帮助你的应用程序从天气服务那里获取数据，而你不需要知道天气数据是如何生成或存储的。这让应用开发者能够专注于用户体验，而不是重新开发获取天气数据的整个流程。
+
+
+
