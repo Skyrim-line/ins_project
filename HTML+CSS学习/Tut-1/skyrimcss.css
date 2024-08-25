@@ -1,0 +1,83 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #dbdbdb;
+
+}
+
+.nav-icon{
+    width: 30px;
+    height: 30px;
+}
+.content{
+    display: flex;
+    align-items: flex-start;
+    height: 100%;
+    
+}
+.content-left{
+    flex:2;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    
+}
+.content-right{
+    flex: 1;
+    
+}
+.content-story{
+    display: flex;
+    justify-content: flex-start;
+    padding: 5px;
+    border: 1px solid black;
+}
+.content-story-img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; 
+    margin: 3px;
+    border: 2px solid orangered;
+}
+.content-feed-card{
+    border: 1px solid black;
+    margin: 20px auto;
+    
+}
+.content-feed-card-header{
+    display: flex;
+    justify-self: flex-start;
+    align-items: center;
+    padding: 10px 20px;    
+}
+.content-feed-card-header-img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid red;
+    margin-right: 10px;
+}
+
+/* main-img可以随着页面的大小而变换 */
+.content-feed-card-main-img{ 
+    width: 100%;
+    height: auto;
+}
+.content-feed-card-actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 5px;
+}
+.content-feed-card-actions-left{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: auto;
+}
+.content-feed-card-text{
+    margin: 5px 10px;
+}
+    
