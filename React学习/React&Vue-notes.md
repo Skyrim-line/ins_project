@@ -16,6 +16,16 @@
 
 `nvm use <version>`
 
+### Package.jon
+
+查看一个项目如果是package.json文件则用 npm start 来启动项目，如果是package-lock.json的话用 `npm yarm start`来启动项目
+
+
+
+
+
+
+
 # Vue Notes
 
 
@@ -27,4 +37,6 @@
 Vite 也是用来搭建前端的框架的
 
 # Vite Notes
+
+
 

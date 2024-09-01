@@ -38,6 +38,42 @@
 - TRACE
 - PATCH
 
+## ES6常用开发函数
+
+**Array**
+
+**Includes**
+
+判断当前的array有没有包括item
+
+**Map**
+
+将array中的每一个item都根据callback变成另一个新的item 
+
+例子：
+
+```js
+arr = [3,4,9,18];
+arr.map((item)=>item*2); 
+arr.map((item)=>'' + item); //将数字变成字符串
+```
+
+**filter**
+
+作用将arr里指定不和要求的item去除，返回一个新的array
+
+![屏幕截图 2024-08-31 110300](H:\ins_project\HTML+CSS学习\note-pic\屏幕截图 2024-08-31 110300.png)
+
+**object**
+
+和python的dict一样，有key和values
+
+**in operator**
+
+**keys**
+
+**values**
+
 ## 浏览器输入URL地址后会发生什么?
 
 - URL解析     输入的URL地址解析
