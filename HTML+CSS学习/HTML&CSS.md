@@ -62,11 +62,20 @@ arr.map((item)=>'' + item); //将数字变成字符串
 
 作用将arr里指定不和要求的item去除，返回一个新的array
 
-![屏幕截图 2024-08-31 110300](H:\ins_project\HTML+CSS学习\note-pic\屏幕截图 2024-08-31 110300.png)
+![屏幕截图 2024-08-31 110300](/Users/skyrim/UNSW/ins_project/HTML+CSS学习/note-pic/屏幕截图 2024-08-31 110300.png)
 
 **object**
 
 和python的dict一样，有key和values
+
+```js
+//调用newArry里的keys
+Object.keys(newArry)
+//获取values也类似
+Object.values(newArry)
+```
+
+
 
 **in operator**
 

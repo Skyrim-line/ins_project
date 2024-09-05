@@ -80,25 +80,13 @@ return result === 1000 ? -1 : res;
 
 这段代码表示：如果 `result` 等于 `1000`，则返回 `-1`；否则，返回 `res` 的值。
 
-示例：
 
-假设 `result = 1000` 和 `res = 500`，运行这段代码：
-
-- 因为 `result` 等于 `1000`，所以返回 `-1`。
-  
-
-如果 `result = 999`，运行这段代码：
-
-- 因为 `result` 不等于 `1000`，所以返回 `res` 的值，即 `500`。
-
-### 三元运算符的优势：
-三元运算符的主要优势在于简洁性，它可以用一行代码来替代 `if-else` 结构，尤其在简单的条件判断时非常方便。不过，如果条件逻辑复杂或需要进行多个操作，通常推荐使用 `if-else` 语句，以提高代码的可读性。
 
 ## JS 数据类型
 
 ### 原始类型
 
-#### 数值类型（Number）
+数值类型（Number）
 
 JavaScript 中只有一种数值类型：`Number`。它既可以表示整数，也可以表示浮点数（小数）。
 
@@ -115,7 +103,7 @@ JavaScript 中只有一种数值类型：`Number`。它既可以表示整数，�
   - 所以，所有 `Number` 类型的数值都是双精度浮点数。
   - 例如：`let c = 1.7976931348623157E+308;` // 这是 JavaScript 中能表示的最大数值。
 
-#### 字符串类型（String）
+字符串类型（String）
 
 - 字符串用单引号 `'`、双引号 `"` 或反引号 `` ` `` 包围。
 - 可以用 `+` 进行字符串连接。
@@ -126,7 +114,7 @@ JavaScript 中只有一种数值类型：`Number`。它既可以表示整数，�
   let str3 = `Hello, ${str2}`;  // 模板字符串
   ```
 
-#### 布尔类型（Boolean）
+布尔类型（Boolean）
 
 - 布尔类型只有两个值：`true` 和 `false`。
 - 通常用于条件判断。
@@ -136,7 +124,7 @@ JavaScript 中只有一种数值类型：`Number`。它既可以表示整数，�
   let isFalse = false;
   ```
 
-#### 数组类型（Array）
+数组类型（Array）
 
 - 数组是一个有序的数据集合，可以存放多个值。
 - 数组的元素可以是任意类型，包括其他数组或对象。
@@ -148,7 +136,7 @@ JavaScript 中只有一种数值类型：`Number`。它既可以表示整数，�
   console.log(arr[0]);  // 输出：1
   ```
 
-#### 未定义类型（Undefined）
+未定义类型（Undefined）
 
 - 如果一个变量被声明但未赋值，那么它的值就是 `undefined`。
 - 例如：
@@ -157,7 +145,7 @@ JavaScript 中只有一种数值类型：`Number`。它既可以表示整数，�
   console.log(x);  // 输出：undefined
   ```
 
-#### 空类型（Null）
+空类型（Null）
 
 - `null` 是一个特殊的关键字，表示空值或不存在的对象。
 - `null` 与 `undefined` 是不同的，虽然它们都表示“无”或“缺少”某个值。
@@ -167,7 +155,7 @@ JavaScript 中只有一种数值类型：`Number`。它既可以表示整数，�
   console.log(y);  // 输出：null
   ```
 
-#### 符号类型（Symbol）
+符号类型（Symbol）
 
 - `Symbol` 是一种原始数据类型，表示独一无二的值。
 - 它常用于对象的属性名称，以避免属性冲突。
@@ -178,14 +166,14 @@ JavaScript 中只有一种数值类型：`Number`。它既可以表示整数，�
   console.log(sym1 === sym2);  // 输出：false
   ```
 
-#### 大整数类型（BigInt）
+大整数类型（BigInt）
 
 - `BigInt` 是一种可以表示任意精度整数的数据类型，用于处理超过 `Number` 类型范围的大数。
 - 例如：
 
 ### 引用类型
 
-#### 对象类型（Object）
+对象类型（Object）
 
 - 对象是一组键值对的集合，键是字符串（或符号），值可以是任何类型。
 
@@ -255,19 +243,22 @@ for (let i = 0; i < 5; i++) {
 
 `new Array()` 是 JavaScript 中用于创建数组的构造函数。它可以用于创建具有特定长度或指定初始元素的数组。以下是几种常见的使用方式：
 
-### 1. 创建一个指定长度的数组
+1. 创建一个指定长度的数组
+
 ```javascript
 let arr = new Array(5);
 ```
 这会创建一个长度为 `5` 的空数组。数组中的每个元素都是 `undefined`，但数组的长度已经被定义为 `5`。
 
-### 2. 创建一个包含初始元素的数组
+2. 创建一个包含初始元素的数组
+
 ```javascript
 let arr = new Array(1, 2, 3);
 ```
 这会创建一个包含 `1`, `2`, `3` 这三个元素的数组。这里，`new Array(1, 2, 3)` 等同于 `let arr = [1, 2, 3];`。
 
-### 3. 使用 `fill()` 方法填充数组
+3. 使用 `fill()` 方法填充数组
+
 在创建一个指定长度的数组后，可以使用 `fill()` 方法填充数组中的每个元素。例如：
 ```javascript
 let arr = new Array(5).fill(0);
@@ -305,9 +296,21 @@ console.log(filledArr); // 输出: [0, 0, 0, 0, 0]
 
 ## 箭头函数
 
-箭头函数在 JavaScript 中的 `this` 绑定方式与普通函数有所不同，这是它们的一大特点。理解箭头函数的 `this` 绑定方式对于编写和调试代码非常重要。
+例子，如果能直接返回的则不需要花括号，否则加上
 
-### 箭头函数中的 `this`
+```js
+const fn1((a,b)=>{
+	const a=1;
+	const b =2;
+	return a +b;
+})
+
+const fn2=(a,b)=> a+b
+```
+
+
+
+### **箭头函数中的 `this`**
 
 箭头函数没有自己的 `this`，它会捕获**定义时**所在上下文中的 `this`，即箭头函数的 `this` 值是由**它被定义时**外层非箭头函数的 `this` 决定的，而不是调用时决定的。
 
@@ -330,7 +333,7 @@ obj.arrowFunction();    // 输出 undefined（因为 this 绑定的是全局对�
 
 在这个示例中，`regularFunction` 中的 `this` 指向调用它的对象 `obj`，所以输出 `"Alice"`。而 `arrowFunction` 的 `this` 是在定义时绑定的，这里绑定到的是全局对象（浏览器中是 `window`），但由于全局对象中没有 `name` 属性，所以输出 `undefined`。
 
-### `this` 在回调函数中的使用
+**`this` 在回调函数中的使用**
 
 箭头函数特别适合在回调函数中使用，因为它们不改变 `this` 的指向：
 
@@ -351,7 +354,7 @@ const timer = new Timer();
 
 在这个例子中，`setInterval` 内的箭头函数继承了 `Timer` 构造函数中的 `this`，所以 `this.seconds` 正确地指向了 `timer` 对象。如果用普通函数来实现，在 `setInterval` 中的 `this` 就会指向 `setInterval` 本身，而不是 `Timer` 对象，需要使用 `bind` 来手动绑定 `this`。
 
-### 总结
+**总结**
 
 - **普通函数**：`this` 取决于调用时的上下文，可以在调用时动态绑定。
 - **箭头函数**：`this` 取决于定义时的上下文，不能在调用时改变。适合在回调函数和需要保持上下文 `this` 的地方使用。
@@ -369,7 +372,7 @@ JavaScript can "display" data in different ways:
 - Writing into an alert box, using `window.alert()`.
 - Writing into the browser console, using `console.log()`.
 
-### innerHTML
+**innerHTML**
 
 To access an HTML element, JavaScript can use the `document.getElementById(id)`method. 
 
@@ -393,7 +396,7 @@ document.getElementById("demo").innerHTML = 5 + 6;
 </html>
 ```
 
-### document.write()
+document.write()
 
 For testing purposes, it is convenient to use `document.write()`:
 
@@ -415,7 +418,7 @@ document.write(5 + 6);// 会直接显示最终结果为：11
 </html> 
 ```
 
-### window.alert()
+window.alert()
 
 Window.alert()调用之后会弹出一个窗口（和下载文件的时候弹出的窗口类型一致）
 
@@ -434,7 +437,7 @@ window.alert(5 + 6);
 </html>
 ```
 
-### console.log()
+console.log()
 
 可以用console.log() 的方法来debugging
 
@@ -528,7 +531,8 @@ cars.push("Audi");
 
 `let` 是 JavaScript 中用于声明变量的一种方式，与 `const` 和 `var` 相比，`let` 具有一些独特的特性，使它在特定场景下非常有用。以下是一些常见的使用场景和推荐的使用 `let` 的情况：
 
-#### 1. **需要重新赋值的变量**
+1. **需要重新赋值的变量**
+
 当你需要在代码中多次更改变量的值时，应该使用 `let`。
 
 ```javascript
@@ -538,7 +542,8 @@ count = count * 2;
 ```
 在这个例子中，`count` 的值会被多次更新，因此适合使用 `let`。
 
-#### 2. **块级作用域**
+2. **块级作用域**
+
 `let` 声明的变量只在其所在的块级作用域内有效。这使得 `let` 非常适合在循环或条件语句中声明临时变量。
 
 ```javascript
@@ -550,7 +555,8 @@ if (true) {
 ```
 在这个例子中，`temp` 变量仅在 `if` 块内部可用，外部无法访问。
 
-#### 3. **避免变量提升（Hoisting）带来的困惑**
+3. **避免变量提升（Hoisting）带来的困惑**
+
 使用 `var` 声明的变量会被提升到函数或全局作用域的顶部，而 `let` 声明的变量则不会被提升。这可以帮助避免一些潜在的错误和混淆。
 
 ```javascript
@@ -586,7 +592,7 @@ for (let i = 0; i < 3; i++) {
 
 
 
-## Dollar Sign $
+Dollar Sign $
 
 - $ are valid variable names:
 - In the JavaScript library jQuery, for instance, **the main function** `$` is used to select HTML elements. 
@@ -649,7 +655,7 @@ document.getElementById("demo").innerHTML = $$$ + $myMoney;
 
 ## CommonJS module (CJS)
 
-### require()
+## require()
 
 1. **语法**：
    - 使用 `require()` 函数来引入模块。
@@ -696,7 +702,7 @@ const initials = lines.map(line => {
 });
 ```
 
-## `.charAt()` 
+**`.charAt()`** 
 
 - `.charAt()` 方法用于获取字符串中指定位置（索引）的字符。
 - 索引从 0 开始，即字符串的第一个字符索引为 0，第二个为 1，依此类推。
@@ -721,7 +727,7 @@ console.log(firstLetter); // 输出 "H"
 
 ## Express
 
-### 初始化项目要做的步骤
+**初始化项目要做的步骤**
 
 ```js
 //npm init
@@ -731,7 +737,7 @@ console.log(firstLetter); // 输出 "H"
 
 
 
-### 响应同一个url不同内容
+**响应同一个url不同内容**
 
 ```js
 server.on("request", (req, res) => {
@@ -743,7 +749,7 @@ server.on("request", (req, res) => {
 });
 ```
 
-### 响应不同url不同内容
+**响应不同url不同内容**
 
 ```js
 server.on("request", (req, res) => {
@@ -759,7 +765,7 @@ server.on("request", (req, res) => {
 });
 ```
 
-### 控制不同文件路径的访问
+**控制不同文件路径的访问**
 
 ```js
 app.use(express.static(publicPath)); //会自动找到public文件夹下的index.html文件然后返回给浏览器
@@ -770,15 +776,15 @@ app.use('/static-files', express.static(publicPath, { index: false }));//如果�
 app.use('/images', express.static(publicPath));
 ```
 
-### nodemon
+## nodemon
 
 使用这个模块可以实时更新代码不用每次手动关闭调整
 
-### **express.static**()
+**express.static**()
 
 可以创建一个静态资源服务器
 
-### login登陆判断
+## login登陆判断
 
 ```js
 // 下面是一个简单的后端login查询示例
@@ -799,25 +805,139 @@ app.post("/login", (req, res) => {
 
 
 
+## 状态码
+
+1xx 
+
+接受的请求正在处理
+
+2xx
+
+状态成功，请求正常处理
+
+3xx
+
+重定向
+
+4xx
+
+客户端出错，服务器无法处理
+
+5xx
+
+服务器错误
+
+
+
 ## API
 
-**例子：天气应用**
+### GET
 
-你可能经常使用手机上的天气应用来查看今天或未来几天的天气情况。这个过程背后其实是依赖API来获取数据的。
+获取指定资源的信息，传送小量数据不大于2KB，安全性低
 
-**具体流程：**
+http://localhost:3003/things?activity=work
 
-1. **用户请求**：你打开天气应用，选择查看你所在城市的天气信息。
+```js
+// GET an activity by query parameter "?activity=work"
+weatherRouter.get('/things', (req, res) => {
+    const activity = req.query.activity;
+    if (!activity) {
+        return res.status(400).send('Activity para is missing');
+    }
+    const result = data.filter((item) => item.activity.includes(activity));//filter() 方法创建一个新数组, 其包含通过所提供函数实现的测试的所有元素
+    if (result.length === 0) { // result is an array
+        return res.status(404).send('Activity not found');
+    }
+    res.send(result);
+});
 
-2. **API请求**：天气应用程序不会自己去收集天气数据，而是会向一个专门的天气服务（比如WeatherAPI或OpenWeatherMap）发出一个API请求。这个请求包括了你所在城市的信息。
+```
 
-3. **服务处理**：天气服务接收到API请求后，会在他们的数据库中查找相关城市的天气数据。
+### POST
 
-4. **API响应**：一旦找到数据，天气服务会通过API把天气信息发送回你的应用。这些信息可能包括温度、湿度、风速、降雨量等。
+向服务器提交数据，用于表单等，安全性高
 
-5. **显示结果**：你的天气应用收到这些数据后，会把它们显示在界面上，供你查看。
+使用 req.params 来解析查询时候的参数，例子如下：
 
-**总结**：在这个例子中，API就像是你和天气服务之间的桥梁。它帮助你的应用程序从天气服务那里获取数据，而你不需要知道天气数据是如何生成或存储的。这让应用开发者能够专注于用户体验，而不是重新开发获取天气数据的整个流程。
+1. 查询指定用户和年龄
+
+POSTMAN里输入的查询 ： http://localhost:3003/user/Skyrim/24
+
+```js
+// req.params实现动态匹配名字和年龄
+app.get('/user/:name/:age', (req, res) => {
+    const { name, age } = req.params;
+    console.log(name, age);
+    res.send(req.params);
+});
+```
+
+2. 查询指定天气情况下的activities:
+
+   POSTMAN : http://localhost:3003/weather/rainy 
+
+   ```js
+   // GET activities based on weather condition  /:condition
+   weatherRouter.get('/weather/:condition', (req, res) => {
+       const condition = req.params.condition;
+       const result = data.filter((item) => item.weather === condition);
+       if (result.length === 0) {
+           return res.status(404).send('Weather condition not found');
+       }
+       res.send(result);
+   });
+   ```
+
+### PUT
+
+更新服务器上指定的资源
+
+
+
+
+
+### DELETE
+
+删除服务器上指定的资源
+
+
+
+## 一些常用命令
+
+创建Vite + React 的前端框架命令：
+
+```shell
+ npm create vite@latest frontend -- --template react 
+```
+
+启动
+
+```shell
+npm run dev
+```
+
+初始化项目：
+
+```js
+//npm init
+//npm i express
+//npm i nodemon -D
+```
+
+## CORS跨域资源共享
+
+Browser有同源安全策略
+
+解决接口跨域的主要方法：
+
+1. CORS（主流的解决方法）
+2. JSONP（只支持GET请求）
+
+**CORS来解决**
+
+```shell
+npm i cors
+```
 
 
 

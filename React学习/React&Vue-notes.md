@@ -20,7 +20,48 @@
 
 查看一个项目如果是package.json文件则用 npm start 来启动项目，如果是package-lock.json的话用 `npm yarm start`来启动项目
 
+## useState
 
+useState 是 React 的一个 Hook，用于在函数组件中添加状态。以下是它的基本用法：
+
+1. 导入：
+
+   ```js
+   import React, { useState } from 'react';
+   ```
+
+2. 基本语法：
+
+   ```js
+   const [state, setState] = useState(initialValue);
+   ```
+
+3. 使用状态：
+
+   - 读取：直接使用 `state`
+   - 更新：调用 `setState(newValue)`
+
+4. 特点：
+
+   - 可以存储任何类型的值（数字、字符串、布尔值、数组、对象等）
+   - 更新状态会触发组件重新渲染
+
+例子：
+
+```js
+  const [todolist, setTodolist] = useState(['hello', 'world']);
+  const [task, setTask] = useState('');
+```
+
+`todolist` 用于存储和管理整个 TODO 列表。当用户添加、编辑或删除任务时，我们会使用 `setTodolist` 来更新这个数组。
+
+`task` 用于管理输入框的内容。当用户在输入框中键入内容时，`task` 会随之更新。当用户点击 "Add" 按钮时，`task` 的内容会被添加到 `todolist` 中，然后 `task` 会被重置为空字符串。
+
+## uuid
+
+生成独一无二的id用于制作checkbox的时候当元素的下标用
+
+`nom i uuid`
 
 
 

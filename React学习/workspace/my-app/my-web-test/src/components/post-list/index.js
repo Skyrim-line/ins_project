@@ -15,9 +15,10 @@ function PostList(props) {
                     <div className="col-sm-6 col-md-4" key={post.id}>
                         <div className="thumbnail">
                             <img
+                                // 插入图片
                                 src="https://raw.githubusercontent.com/Skyrim-line/ins_project/main/images/7-11.jpg?token=GHSAT0AAAAAACUDBMDGPINNVKDRYTDQ6BU2ZWHKT6A"
                                 alt="7-11 convenience store"
-                                style={{ height: '200px', width: '100%', display: 'block' }}
+                                style={{ height: 'auto', width: '100%', objectFit: 'cover' }}
                                 data-holder-rendered="true"
                             />
                             <div className="caption">
