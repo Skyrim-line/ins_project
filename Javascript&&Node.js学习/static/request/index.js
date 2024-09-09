@@ -25,6 +25,7 @@ app.get('/', (req, res) => {
 });
 
 // req.params实现动态匹配名字和年龄
+// 使用方法：http://localhost:3000/user/John/25
 app.get('/user/:name/:age', (req, res) => {
     const { name, age } = req.params;
     console.log(name, age);

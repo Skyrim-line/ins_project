@@ -18,7 +18,17 @@ const ProfileInfo = () => {
       {profileData[id] ? (
         <InfoContainer>
           {/* 导入图片，补全图片的样式style.js设置图片样式,每个模块在style.js里面已经被定义过 */}
-          <img src={profileData[id].profilePic} alt="profile picture" />
+          <img 
+            src={profileData[id].profilePic} 
+            alt="Profile picture" 
+            style={{
+              width: '100px',  // 设置所需的宽度
+              height: '100px', // 高度与宽度相等
+              borderRadius: '50%', // 使图片变为圆形
+              objectFit: 'cover', // 确保图片填满容器而不拉伸
+              objectPosition: 'center' // 居中图片
+            }}
+          />
           <Info>
             <p className="owner-ID">
               {profileData[id].userID}

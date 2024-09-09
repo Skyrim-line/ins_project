@@ -5,6 +5,7 @@ import {
   Route,
   Routes
 } from 'react-router-dom';
+import Register from './components/Register/Register';
 
 // 查看他人的个人主页是否存在该用户
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/profile/:id" element={<Profile />} /> 
+        <Route path="/register" element={<Register/>} /> 
       </Routes>
     </Router>
   );

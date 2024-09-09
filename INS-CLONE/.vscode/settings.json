@@ -1,8 +1,16 @@
 {
-    "audioCues.chatResponsePending": "off",
-    "audioCues.diffLineDeleted": "off",
-    "audioCues.diffLineInserted": "off",
-    "audioCues.diffLineModified": "off",
-    "audioCues.volume": 0,
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "accessibility.signals.diffLineInserted": {
+        "sound": "off"
+    },
+    "accessibility.signals.diffLineDeleted": {
+        "sound": "off"
+    },
+    "accessibility.signals.diffLineModified": {
+        "sound": "off"
+    },
+    "accessibility.signals.progress": {
+        "sound": "off"
+    },
+    "accessibility.signalOptions.volume": 0
 }
