@@ -607,6 +607,68 @@ document.getElementById("demo").innerHTML = $$$ + $myMoney;
 </script>
 ```
 
+## .splice()
+
+`groups.splice(groupIndex, 1)` 是用来从数组中删除一个元素的操作。让我们详细解释一下：
+
+`splice` 方法：
+
+`splice()` 是 JavaScript 数组中的一个方法，用于**添加、删除或替换**数组中的元素。它会修改原数组，并返回被删除的元素（如果有删除操作的话）。
+
+语法：
+
+```js
+array.splice(startIndex, deleteCount, ...itemsToAdd)
+```
+
+- `startIndex`: 要操作的起始索引位置。也就是从数组的哪一个索引开始修改。
+- `deleteCount`: 要删除的元素数量。如果为 `0`，表示不删除任何元素。如果是 `1`，表示删除从 `startIndex` 开始的一个元素。
+- `itemsToAdd`: 可选，表示要在 `startIndex` 位置添加的元素。如果不想添加任何新元素，可以省略。
+
+在你的代码中：
+
+```ts
+groups.splice(groupIndex, 1);
+```
+
+- `groupIndex` 是要删除的组在 `groups` 数组中的索引，这个索引通过 `findIndex` 找到。
+- `1` 是 `deleteCount`，表示删除从 `groupIndex` 开始的一个元素。
+
+举例：
+
+假设 `groups` 数组如下：
+```ts
+const groups = [
+  { id: 1, groupName: 'Group 1', members: [1, 2, 4] },
+  { id: 2, groupName: 'Group 2', members: [3, 5] },
+];
+```
+
+假设 `groupIndex` 是 `1`，也就是第二个组（`Group 2`），那么 `splice` 的操作会：
+1. 从索引 `1` 开始（也就是 `Group 2`）。
+2. 删除 `1` 个元素（即 `Group 2`）。
+
+执行完这条语句后，`groups` 数组会变成：
+```ts
+[
+  { id: 1, groupName: 'Group 1', members: [1, 2, 4] }
+]
+```
+
+结果：
+
+- 原数组 `groups` 中的 `Group 2` 被删除，数组被修改。
+- 如果我们想知道删除的元素，`splice` 还会返回被删除的元素的数组，在这个例子中是：
+  ```ts
+  [{ id: 2, groupName: 'Group 2', members: [3, 5] }]
+  ```
+
+总结：
+
+`groups.splice(groupIndex, 1)` 这个操作的目的就是删除 `groups` 数组中索引为 `groupIndex` 的那一个组。
+
+
+
 
 
 # Node.js Notes
