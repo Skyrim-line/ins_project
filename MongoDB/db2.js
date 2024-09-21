@@ -1,4 +1,6 @@
 // 如果数据库不存在，mongodb会自动创建数据库但是不会自动创建collection
+// 使用nodemon db2.js启动可以实时更新变动
+// 此文件用于学习如何创建数据库，collection和document，如何构建schema，如何插入文档
 
 const mongoose = require('mongoose');
 // 创建course的数据库
@@ -19,6 +21,7 @@ const connectDB = async () => {
 };
 
 connectDB();
+
 // create collection
 const courseSchema = new mongoose.Schema({
     name: String,
@@ -27,7 +30,7 @@ const courseSchema = new mongoose.Schema({
 });
 
 // create collection with rules
-const Course = mongoose.model('Course', courseSchema);  //courses
+const Course = mongoose.model('Course', courseSchema);  //courses collection
 
 //create document
 // 创建一个collection其实是创建构造函数的实例对象
