@@ -1,8 +1,9 @@
-import React from 'react';
-import PostList from './components/post-list';
-import HotPost from './components/hot-post';
-import Navbar from './components/Nav-bar';
-import './App.scss';
+import React from "react";
+import PostList from "./components/post-list";
+import HotPost from "./components/hot-post";
+import Navbar from "./components/Nav-bar";
+import Footer from "./components/footer";
+import "./App.scss";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             </div>
           </div>
         </div>
+        <Footer></Footer>
       </div>
     </>
   );
