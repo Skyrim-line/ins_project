@@ -237,6 +237,48 @@ for (let i = 0; i < 5; i++) {
 
 在这个示例中，`console.log(i)` 也将输出从 `0` 到 `4` 的值，和 `while` 语句的功能类似，但 `for` 语句的循环控制集中在一行代码里，更加紧凑。
 
+### For...of
+
+对列表或字符串的value进行遍历
+
+```js
+const numbers = [1, 2, 3, 4, 5];
+
+for (const num of numbers) {
+  console.log(num);
+}
+
+// Output:
+// 1
+// 2
+// 3
+// 4
+// 5
+```
+
+### For...in
+
+对列表或字符串的key进行遍历
+
+```js
+const person = {
+  name: 'Alice',
+  age: 25,
+  job: 'Engineer'
+};
+
+for (const key in person) {
+  console.log(`${key}: ${person[key]}`);
+}
+
+// 输出:
+// name: Alice
+// age: 25
+// job: Engineer
+```
+
+
+
 
 
 ## Array()
