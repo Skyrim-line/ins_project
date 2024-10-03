@@ -1,7 +1,7 @@
 // 此文件用于实现Form表单练习
 import React, { useState } from "react";    
 import Ajv from "ajv";
-import ajcError from "ajv-errors";
+import ajvErrors from "ajv-errors";
 
 
 
@@ -29,7 +29,7 @@ const WritePost = props => {
     };
 
     const ajv = new Ajv({ allErrors: true });
-    ajcError(ajv);
+    ajvErrors(ajv);
     const validate = ajv.compile(schema);   
 
 
